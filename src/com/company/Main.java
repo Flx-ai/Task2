@@ -5,37 +5,46 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner num = new Scanner(System.in);
         System.out.println("Введите 3 числа");
-        int a = num.nextInt();
-        int b = num.nextInt();
-        int c = num.nextInt();
+        int a = readValue();
+        int b = readValue();
+        int c = readValue();
         compareNumbers(a,b,c);
     }
 
-    static void compareNumbers( int a,int b,int c) {
+    static int readValue() {
+        Scanner num = new Scanner(System.in);
+        return num.nextInt();
+    }
+
+    static void compareNumbers(int a, int b, int c) {
+       /* int min = Math.min(Math.min(a, b),c);
+        int max = Math.max(Math.max(a, b),c);                       Решена задача с использованием библиотеки Math
+        int sr = a + b + c - max - min;
+        System.out.println("Результат: "+ min +"<="+ sr +"<="+ max);
+        */
+
         int min, max, sr;
         if (a>b) {
-            max = a;
-            min = b;
+            max = a; min = b;
         }
-
         else {
-            max = b;
-            min = a;
+            max = b; min = a;
         }
+                                                                     // Решена задача без библиотеки Math
+        if (c>max) max = c;
 
-        if (c>max)
-            max = c;
+        if (c<min) min = c;
 
-        if (c<min)
-            min = c;
-
-        if (a!=min && a!=max) sr = a;
-        else if (b!=min && b!=max) sr = b;
-        else sr = c;
+        sr = a + b + c - max - min;
 
         System.out.println("Результат: "+ min +"<="+ sr +"<="+ max);
+
+
+
+
+
+
     }
 
 }
