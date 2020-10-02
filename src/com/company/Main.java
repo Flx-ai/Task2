@@ -37,14 +37,7 @@ public class Main {
         if (c<min) min = c;
 
         sr = a + b + c - max - min;
-
         System.out.println("Результат: "+ min +"<="+ sr +"<="+ max);
-
-
-
-
-
-
     }
 
 }
