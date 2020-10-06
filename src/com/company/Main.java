@@ -1,4 +1,4 @@
-package com.company;
+package vsu.cs.ru.num22;
 import  java.util.Scanner;
 
 public class Main {
